@@ -39,16 +39,15 @@ No, I do not need a USA number
   </ul>
 
     <p class="card-text"><i>Select all 3 add-on options and get 10 Shekels off your monthly price!</i></p>
-  </div>
+  </div><!--end card body-->
 
   <div class="card-header text-center">
 	Your Price: ₪ {totalPrice} per month 
 	<small class="card-subtitle mb-2 text-muted">(approx ${(totalPrice/rateUSD).toFixed(2)})</small>
 	<i class="card-subtitle mb-2 text-muted" if={discount}> discount applied!</i>
   </div>
-  </div>
   
-</div>
+</div><!--end card-->
 
 <Br><Br>
 <div class="card" style="width: 30rem;">

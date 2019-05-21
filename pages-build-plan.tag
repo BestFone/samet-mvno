@@ -2,13 +2,13 @@
 
 <div class="container center-block">
 
-<h2 class="display-3">Build Your Own 30-Day Plan</h2>
+<h2 class="display-3">Build Your Own Monthly Plan</h2>
 
 <div class="card" style="width: 30rem;">
 
 <div class="card-header text-center">
-	Your Price: ₪ {totalPrice} per month 
-	<small class="card-subtitle mb-2 text-muted">(Current dollar rate: ${(totalPrice/rateUSD).toFixed(2)})</small>
+	Your Total Price: ₪ {totalPrice} per month 
+	<small class="card-subtitle mb-2 text-muted">(current dollar rate: ${(totalPrice/rateUSD).toFixed(2)})</small>
 	<i class="card-subtitle mb-2 text-muted" if={discount}> discount applied!</i>
   </div>
   <div class="card-body">
@@ -55,8 +55,8 @@ No, I do not need a USA number
   </div><!--end card body-->
 
   <div class="card-header text-center">
-	Your Price: ₪ {totalPrice} per month 
-	<small class="card-subtitle mb-2 text-muted">(Current dollar rate: ${(totalPrice/rateUSD).toFixed(2)})</small>
+	Your Total Price: ₪ {totalPrice} per month 
+	<small class="card-subtitle mb-2 text-muted">(current dollar rate: ${(totalPrice/rateUSD).toFixed(2)})</small>
 	<i class="card-subtitle mb-2 text-muted" if={discount}> discount applied!</i>
   </div>
   

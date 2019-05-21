@@ -21,12 +21,14 @@
 
 	<li class="list-group-item">
 		<select ref='internet' onchange={toggleInternet}>
-		<option value=0> No Internet data</option>
+		<option value='not chosen'>--Select Internet package--</option>
 		<option value=20> 5GB: ₪20 per month</option>
 		<option value=40>20GB: ₪40 per month</option>
 		<option value=60>50GB: ₪60 per month</option>
+		<option value=0> None: ₪0 per month</option>
 		 </select>
-			High-speed 4G/LTE Internet data</li>
+			{refs.internet.value==0 ? 'You will have no Internet data on your phone. You can still connect to WiFi when available.' : 
+			'High-speed 4G/LTE Internet data'}</li>
 
 <!--No, I do not need calls to the USA/Canada
 No, I do not need a USA number

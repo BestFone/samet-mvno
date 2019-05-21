@@ -12,10 +12,16 @@
 	<i class="card-subtitle mb-2 text-muted" if={discount}> discount applied!</i>
   </div>
   <div class="card-body">
-  <ul class="list-group">
+<ul class="list-group">
 	<li class="list-group-item"><i class="fas fa-check text-success"></i> Israeli phone number</li>
 	<li class="list-group-item"><i class="fas fa-check text-success"></i> Unlimited outgoing calls and text messages to Israeli phone numbers</li>
 	<li class="list-group-item"><i class="fas fa-check text-success"></i> Unlimited incoming calls and text messages from anywhere in the world</li>
+	</ul>
+
+	<br>
+	<center><small class="card-text"><i>Select all 3 add-on options and get 10 Shekels off your monthly price!</i></small></center>
+
+<ul class="list-group">
 	<li class="list-group-item"><i class="fas fa-2x fa-toggle-{optionCallUSA ? 'on' : 'off'} {optionCallUSA ? 'text-success' : 'text-danger'}" onclick={toggleCallNA}></i>
 			Unlimited calls to the USA and Canada (₪20 per month )</li>
 	<li class="list-group-item"><i class="fas fa-2x fa-toggle-{optionVirtualNumber ? 'on' : 'off'} {optionVirtualNumber ? 'text-success' : 'text-danger'}" onclick={toggleVirtual}></i>
@@ -46,7 +52,6 @@ No, I do not need a USA number
 
   </ul>
 
-    <p class="card-text"><i>Select all 3 add-on options and get 10 Shekels off your monthly price!</i></p>
   </div><!--end card body-->
 
   <div class="card-header text-center">

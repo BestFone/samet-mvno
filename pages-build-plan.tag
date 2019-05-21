@@ -16,7 +16,7 @@
 
 <br><br>
 
-<h2 class="display-3">View Monthly Plans</h2>
+<h2 class="display-2">View Monthly Plans</h2>
 
 <div class="card" style="width: 30rem;">
 

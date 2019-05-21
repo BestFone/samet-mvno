@@ -31,9 +31,6 @@
 
 <div class="btn-group btn-group-toggle" data-toggle="buttons">
   <label class="btn btn-info" onclick={toggleInternet}>
-    <input type="radio" name="internet" ref='internet' autocomplete="off" data-price=0 value=0>No data
-  </label>
-  <label class="btn btn-info" onclick={toggleInternet}>
     <input type="radio" name="internet" ref='internet' autocomplete="off" data-price=20 value=5>5GB<br><small>₪20 monthly</small>
   </label>
   <label class="btn btn-info" onclick={toggleInternet}>
@@ -41,6 +38,9 @@
   </label>
   <label class="btn btn-info" onclick={toggleInternet}>
     <input type="radio" name="internet" ref='internet' autocomplete="off" data-price=60 value=50>50GB<br><small>₪60 monthly</small>
+  </label>
+  <label class="btn btn-info" onclick={toggleInternet}>
+    <input type="radio" name="internet" ref='internet' autocomplete="off" data-price=0 value=0>No data
   </label>
 </div>
 			{optionsInternet==0 && optionsInteretTouched ? 'You will have no Internet data on your phone. You can still connect to WiFi when available.' : 

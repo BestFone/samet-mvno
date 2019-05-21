@@ -2,6 +2,20 @@
 
 <div class="container center-block">
 
+<br>
+<button type="button" class="btn btn-primary btn-lg">
+	I do not have a SIM card. Order one now >
+	</button><br><br>
+<button type="button" class="btn btn-primary btn-lg">
+		<span class="fa-stack fa-2x">
+		<i class="fas fa-check fa-stack-2x" style="color:green"></i>
+		<i class="fas fa-sim-card fa-stack-1x"></i>
+		</span>
+	I have a SIM card. Activate it now >
+	</button>
+
+<br>
+
 <h2 class="display-3">View Monthly Plans</h2>
 
 <div class="card" style="width: 30rem;">
@@ -40,7 +54,7 @@
     <input type="radio" name="internet" ref='internet' autocomplete="off" data-price=60 value=50>50GB<br><small>₪60 monthly</small>
   </label>
   <label class="btn btn-info" onclick={toggleInternet}>
-    <input type="radio" name="internet" ref='internet' autocomplete="off" data-price=0 value=0>No Internet data<br>₪0 monthly<small>
+    <input type="radio" name="internet" ref='internet' autocomplete="off" data-price=0 value=0>No Internet data<small>
   </label>
 </div>
 			{optionsInternet==0 && optionsInteretTouched ? 'You will have no Internet data on your phone. You can still connect to WiFi when available.' : 

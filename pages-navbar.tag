@@ -10,8 +10,8 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="#">View Plans</a>
+      <li class="nav-item {activePage=='buildplan' ? 'active' : ''}">
+        <a class="nav-link" href="#buildplan">View Plans</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Order SIM </a>
@@ -22,8 +22,8 @@
       <li class="nav-item">
         <a class="nav-link" href="#">My Account</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">FAQ</a>
+      <li class="nav-item {activePage=='faq' ? 'active' : ''}">
+        <a class="nav-link" href="#faq">FAQ</a>
       </li>
     </ul>
   </div>

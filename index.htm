@@ -83,9 +83,11 @@ div.myRow {
 
 <script type="riot/tag" data-src="pages-navbar.tag"></script>
 <script type="riot/tag" data-src="pages-build-plan.tag"></script>
+<script type="riot/tag" data-src="pages-faq.tag"></script>
 
 <script>
 	var rateUSD=3.6153;
+	var activePage=null;
 
 	riot.util.tmpl.errorHandler = function(err) { console.warn(err) }
 	riot.mount('#navbar','navbar');
@@ -95,20 +97,15 @@ div.myRow {
 		currentTag && currentTag.unmount(true);
 		window.scrollTo(0,0);//Long pages leave us scrolled to the bottom.
 		currentTag = riot.mount('#main', tag, options);
+		activePage=tag;
+		riot.update();
 		if(currentTag && currentTag[0]) currentTag=currentTag[0];
 		}
 	
 	function router (section, req, data) {
-		if (section=='view' && req=='countrylist') mount('countrylist');
-		else if (section=='view' && req=='portinginfo') mount('portinginfo');
-	
-		else if (section=='result')	mount('result',{req: req});
-		else if (section=='result-port')	mount('savesms',{sim: req, unique: data});
-	
-		else if (section.toLowerCase()=='creditcard')	mount('credit-card-submission',{req: req});
-		else if (section =="page") mount('main', {active: req});
-		else if (section =="resubmit") mount('resubmit');
-		else mount('main');
+		if (section =="buildplan") mount('buildplan');
+		else if (section =="faq") mount('faq');
+		else mount('buildplan');
 		}
 	
 	//route.stop(); // clear all the old riot.route callbacks

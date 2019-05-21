@@ -1,4 +1,4 @@
-<main>
+<buildplan>
 
 <div class="container center-block">
 
@@ -156,4 +156,4 @@ function getValueNumeric(field){
 
 
 </script>
-</main>
+</buildplan>

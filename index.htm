@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> <!--for ie 8 both bootstrap and riotjs-->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<title>Samet Phones</title>
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+
+	<!-- Custom styles for this template -->
+	<style>
+	body {
+/* Show it is fixed to the top */
+		padding-bottom: 10px;
+		padding-left: 10px;
+		padding-right: 10px;
+  
+  min-height: 75rem;
+  padding-top: 4.5rem;
+}
+.success {
+  background: #dff0d8
+  }
+input.success {
+  background: #dff0d8
+  }
+input.error {
+  background: #f2dede
+  }
+div.myRow {
+  border-top: 1px solid;
+  }
+
+.glyphicon-spin {
+    -webkit-animation: spin 3000ms infinite linear;
+    animation: spin 3000ms infinite linear;
+    }
+  @-webkit-keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+      }
+    100% {
+      -webkit-transform: rotate(359deg);
+      transform: rotate(359deg);
+      }
+    }
+  @keyframes spin {
+    0% {
+      -webkit-transform: rotate(0deg);
+      transform: rotate(0deg);
+      }
+    100% {
+      -webkit-transform: rotate(359deg);
+      transform: rotate(359deg);
+      }
+    }
+	</style>
+	<!-- source is from signup & here: http://getbootstrap.com/examples/navbar-fixed-top/ -->
+</head>
+<body>
+
+<div id="navbar"></div>
+
+<div id='main'></div>
+
+
+<!--support scripts, used universally-->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/riot@3.13/riot+compiler.min.js"></script>
+<script src="bower_components/riot-route/dist/route.min.js"></script>
+
+
+<script type="riot/tag" data-src="mvno-navbar.tag"></script>
+<script type="riot/tag" data-src="mvno-build-plan.tag"></script>
+
+<script>
+	riot.util.tmpl.errorHandler = function(err) { console.warn(err) }
+	riot.mount('#navbar','navbar');
+
+	var currentTag = null
+	function mount (tag, options) {
+		currentTag && currentTag.unmount(true);
+		window.scrollTo(0,0);//Long pages leave us scrolled to the bottom.
+		currentTag = riot.mount('#main', tag, options);
+		if(currentTag && currentTag[0]) currentTag=currentTag[0];
+		}
+	
+	function router (section, req, data) {
+		if (section=='view' && req=='countrylist') mount('countrylist');
+		else if (section=='view' && req=='portinginfo') mount('portinginfo');
+	
+		else if (section=='result')	mount('result',{req: req});
+		else if (section=='result-port')	mount('savesms',{sim: req, unique: data});
+	
+		else if (section.toLowerCase()=='creditcard')	mount('credit-card-submission',{req: req});
+		else if (section =="page") mount('main', {active: req});
+		else if (section =="resubmit") mount('resubmit');
+		else mount('main');
+		}
+	
+	//route.stop(); // clear all the old riot.route callbacks
+	route(router);
+	route.start(true); // start again
+
+	</script>
+</body>
+</html>

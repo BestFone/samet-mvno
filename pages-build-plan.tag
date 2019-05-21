@@ -23,9 +23,9 @@
 
 <ul class="list-group">
 	<li class="list-group-item"><i class="fas fa-2x fa-toggle-{optionCallUSA ? 'on' : 'off'} {optionCallUSA ? 'text-success' : 'text-danger'}" onclick={toggleCallNA}></i>
-			Unlimited calls to the USA and Canada (₪20 per month )</li>
+			Unlimited calls to the USA and Canada (₪20 per month)</li>
 	<li class="list-group-item"><i class="fas fa-2x fa-toggle-{optionVirtualNumber ? 'on' : 'off'} {optionVirtualNumber ? 'text-success' : 'text-danger'}" onclick={toggleVirtual}></i>
-			USA phone number that rings on your phone (₪20 per month)</li>
+			USA phone number for calls and text to and from the USA (₪20 per month)</li>
 
 	<li class="list-group-item">
 

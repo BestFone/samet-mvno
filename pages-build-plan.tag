@@ -7,7 +7,7 @@
 <div class="card" style="width: 30rem;">
 
 <div class="card-header text-center">
-	Your Total Price: ₪ {totalPrice} per month 
+	Total Price per Month: {totalPrice} Shekels
 	<small class="card-subtitle mb-2 text-muted">(current dollar rate: ${(totalPrice/rateUSD).toFixed(2)})</small>
 	<i class="card-subtitle mb-2 text-muted" if={discount}> discount applied!</i>
   </div>
@@ -55,7 +55,7 @@ No, I do not need a USA number
   </div><!--end card body-->
 
   <div class="card-header text-center">
-	Your Total Price: ₪ {totalPrice} per month 
+	Total Price per Month: {totalPrice} Shekels 
 	<small class="card-subtitle mb-2 text-muted">(current dollar rate: ${(totalPrice/rateUSD).toFixed(2)})</small>
 	<i class="card-subtitle mb-2 text-muted" if={discount}> discount applied!</i>
   </div>

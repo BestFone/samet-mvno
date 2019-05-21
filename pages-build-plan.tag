@@ -55,6 +55,23 @@ No, I do not need a USA number
 	</ul>
 </div>
 
+<br>
+<button type="button" class="btn btn-primary btn-lg">
+	<span class="fa-stack fa-2x">
+		<i class="fas fa-sim-card fa-stack-1x"></i>
+		<i class="fas fa-ban fa-stack-2x" style="color:Tomato"></i>
+	</span>
+	I do not have a SIM card. I’d like to order one now >
+	</button><br><br>
+<button type="button" class="btn btn-primary btn-lg">
+		<span class="fa-stack fa-2x">
+		<i class="fas fa-check fa-stack-2x" style="color:green"></i>
+		<i class="fas fa-sim-card fa-stack-1x"></i>
+		</span>
+	I have a SIM card. Activate it now >
+	</button>
+
+
 </div><!--big container-->
 
 

@@ -2,7 +2,7 @@
 
 <div class="container center-block">
 
-<h2 class="display-3">Build Your Own Monthly Plan</h2>
+<h2 class="display-3">Build Your Own 30-Day Plan</h2>
 
 <div class="card" style="width: 30rem;">
 

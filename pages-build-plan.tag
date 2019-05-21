@@ -66,7 +66,7 @@ No, I do not need a USA number
 
   <div class="card-header text-center">
 	Total Price per Month: {totalPrice} Shekels 
-	<small class="card-subtitle mb-2 text-muted">(current dollar rate: ${(totalPrice/rateUSD).toFixed(2)})</small>
+	<small class="card-subtitle mb-2 text-muted">(current dollar rate: ${(totalPrice/rateUSD).toFixed(2)})
 	<i class="card-subtitle mb-2 text-muted" if={discount}> discount applied!</i>
   </div>
   

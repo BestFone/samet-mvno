@@ -14,7 +14,7 @@
         <a class="nav-link" href="#buildplan">View Plans</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Order SIM </a>
+        <a class="nav-link" href="#">Get SIM Card</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Activate SIM</a>

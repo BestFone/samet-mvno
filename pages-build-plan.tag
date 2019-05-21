@@ -22,14 +22,22 @@
 			USA phone number that rings on your phone (₪20 per month)</li>
 
 	<li class="list-group-item">
-		<select ref='internet' onchange={toggleInternet}>
-		<option value='not chosen'>--Select Internet package--</option>
-		<option value=20> 5GB: ₪20 per month</option>
-		<option value=40>20GB: ₪40 per month</option>
-		<option value=60>50GB: ₪60 per month</option>
-		<option value=0> None: ₪0 per month</option>
-		 </select>
-			{refs.internet.value==0 ? 'You will have no Internet data on your phone. You can still connect to WiFi when available.' : 
+
+<div class="btn-group btn-group-toggle" data-toggle="buttons">
+  <label class="btn btn-info" onclick={toggleInternet}>
+    <input type="radio" name="internet" ref='internet' autocomplete="off" data-price=0 value=0>No data
+  </label>
+  <label class="btn btn-info" onclick={toggleInternet}>
+    <input type="radio" name="internet" ref='internet' autocomplete="off" data-price=20 value=5>5GB<br><small>₪20 monthly</small>
+  </label>
+  <label class="btn btn-info" onclick={toggleInternet}>
+    <input type="radio" name="internet" ref='internet' autocomplete="off" data-price=40 value=20>20GB<br><small>₪40 monthly</small>
+  </label>
+  <label class="btn btn-info" onclick={toggleInternet}>
+    <input type="radio" name="internet" ref='internet' autocomplete="off" data-price=60 value=50>50GB<br><small>₪60 monthly</small>
+  </label>
+</div>
+			{optionsInternet==0 && optionsInteretTouched ? 'You will have no Internet data on your phone. You can still connect to WiFi when available.' : 
 			'High-speed 4G/LTE Internet data'}</li>
 
 <!--No, I do not need calls to the USA/Canada
@@ -114,9 +122,14 @@ this.toggleVirtual =function(){
 	}
 
 this.optionsInternet=0;
+this.optionsInteretTouched=false;//only show "only wifi" once they've picked "no internet"
 this.toggleInternet=function(){
-	this.optionsInternet=parseInt(this.refs.internet.value,10);
-	this.updatePrice();
+	setTimeout(function(){//Weird! this bootstrap group doesn't actually have the value changed on clicking it!
+		var price = $("input[name='internet']:checked").attr('data-price');
+		self.optionsInternet=parseInt(price,10);
+		self.optionsInteretTouched=true;
+		self.updatePrice();
+		},150);
 	}
 
 

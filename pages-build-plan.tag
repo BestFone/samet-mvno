@@ -14,7 +14,7 @@
 	I have a SIM card. Activate it now >
 	</button>
 
-<br>
+<br><br>
 
 <h2 class="display-3">View Monthly Plans</h2>
 

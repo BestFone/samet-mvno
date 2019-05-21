@@ -61,7 +61,7 @@ No, I do not need a USA number
   </div>
   
 </div><!--end card-->
-<br>
+
 <br>
 <button type="button" class="btn btn-primary btn-lg">
 	<span class="fa-stack fa-2x">

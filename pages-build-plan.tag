@@ -8,7 +8,7 @@
 
 <div class="card-header text-center">
 	Your Price: ₪ {totalPrice} per month 
-	<small class="card-subtitle mb-2 text-muted">(approx ${(totalPrice/rateUSD).toFixed(2)})</small>
+	<small class="card-subtitle mb-2 text-muted">(Current dollar rate: ${(totalPrice/rateUSD).toFixed(2)})</small>
 	<i class="card-subtitle mb-2 text-muted" if={discount}> discount applied!</i>
   </div>
   <div class="card-body">
@@ -56,7 +56,7 @@ No, I do not need a USA number
 
   <div class="card-header text-center">
 	Your Price: ₪ {totalPrice} per month 
-	<small class="card-subtitle mb-2 text-muted">(approx ${(totalPrice/rateUSD).toFixed(2)})</small>
+	<small class="card-subtitle mb-2 text-muted">(Current dollar rate: ${(totalPrice/rateUSD).toFixed(2)})</small>
 	<i class="card-subtitle mb-2 text-muted" if={discount}> discount applied!</i>
   </div>
   

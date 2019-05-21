@@ -7,7 +7,9 @@
 <div class="card" style="width: 30rem;">
 
 <div class="card-header text-center">
-    Your Price: ₪ {totalPrice} per month <i class="card-subtitle mb-2 text-muted" if={discount}> discount applied!</i>
+	Your Price: ₪ {totalPrice} per month 
+	<small class="card-subtitle mb-2 text-muted">(approx ${(totalPrice/rateUSD).toFixed(2)})</small>
+	<i class="card-subtitle mb-2 text-muted" if={discount}> discount applied!</i>
   </div>
   <div class="card-body">
   <ul class="list-group">
@@ -40,7 +42,10 @@ No, I do not need a USA number
   </div>
 
   <div class="card-header text-center">
-    Your Price: ₪ {totalPrice} per month <i class="card-subtitle mb-2 text-muted" if={discount}> discount applied!</i>
+	Your Price: ₪ {totalPrice} per month 
+	<small class="card-subtitle mb-2 text-muted">(approx ${(totalPrice/rateUSD).toFixed(2)})</small>
+	<i class="card-subtitle mb-2 text-muted" if={discount}> discount applied!</i>
+  </div>
   </div>
   
 </div>

@@ -64,7 +64,7 @@ No, I do not need a USA number
 
 <br>
 <button type="button" class="btn btn-primary btn-lg">
-	I do not have a SIM card. I’d like to order one now >
+	I do not have a SIM card. Order one now >
 	</button><br><br>
 <button type="button" class="btn btn-primary btn-lg">
 		<span class="fa-stack fa-2x">

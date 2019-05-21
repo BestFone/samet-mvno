@@ -4,7 +4,7 @@
 
 <br>
 <button type="button" class="btn btn-primary btn-lg">
-	I do not have a SIM card. Order one now >
+	I do not have a SIM card. Get one now >
 	</button><br><br>
 <button type="button" class="btn btn-primary btn-lg">
 	I have a SIM card. Activate it now >
@@ -74,7 +74,7 @@ No, I do not need a USA number
 
 <br>
 <button type="button" class="btn btn-primary btn-lg">
-	I do not have a SIM card. Order one now >
+	I do not have a SIM card. Get one now >
 	</button><br><br>
 <button type="button" class="btn btn-primary btn-lg">
 	I have a SIM card. Activate it now >

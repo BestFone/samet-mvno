@@ -61,17 +61,7 @@ No, I do not need a USA number
   </div>
   
 </div><!--end card-->
-
-<Br><Br>
-<div class="card" style="width: 30rem;">
-<ul class="list-group list-group-flush">
-	<li class="list-group-item"><i class="fas fa-check"></i> No activation fee!</li>
-	<li class="list-group-item"><i class="fas fa-check"></i> No additional fees!</li>
-	<li class="list-group-item"><i class="fas fa-check"></i> No long term contract!</li>
-	<li class="list-group-item"><i class="fas fa-check"></i> Fully prepaid, renewable monthly!</li>
-	</ul>
-</div>
-
+<br>
 <br>
 <button type="button" class="btn btn-primary btn-lg">
 	<span class="fa-stack fa-2x">
@@ -87,6 +77,16 @@ No, I do not need a USA number
 		</span>
 	I have a SIM card. Activate it now >
 	</button>
+
+<br><br>
+<div class="card" style="width: 30rem;">
+<ul class="list-group list-group-flush">
+	<li class="list-group-item"><i class="fas fa-check"></i> No activation fee!</li>
+	<li class="list-group-item"><i class="fas fa-check"></i> No additional fees!</li>
+	<li class="list-group-item"><i class="fas fa-check"></i> No long term contract!</li>
+	<li class="list-group-item"><i class="fas fa-check"></i> Fully prepaid, renewable monthly!</li>
+	</ul>
+</div>
 
 
 </div><!--big container-->

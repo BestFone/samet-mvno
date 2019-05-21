@@ -40,7 +40,7 @@
     <input type="radio" name="internet" ref='internet' autocomplete="off" data-price=60 value=50>50GB<br><small>₪60 monthly</small>
   </label>
   <label class="btn btn-info" onclick={toggleInternet}>
-    <input type="radio" name="internet" ref='internet' autocomplete="off" data-price=0 value=0>No data
+    <input type="radio" name="internet" ref='internet' autocomplete="off" data-price=0 value=0>No Internet data<br>₪0 monthly<small>
   </label>
 </div>
 			{optionsInternet==0 && optionsInteretTouched ? 'You will have no Internet data on your phone. You can still connect to WiFi when available.' : 

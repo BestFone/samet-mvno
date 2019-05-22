@@ -2,13 +2,23 @@
 
 <div class="container center-block">
 
-<h2 class="display-3">Build Your Own 30-Day Plan</h2>
+<br>
+<button type="button" class="btn btn-primary btn-lg">
+	I do not have a SIM card. Get one now >
+	</button><br><br>
+<button type="button" class="btn btn-primary btn-lg">
+	I have a SIM card. Activate it now >
+	</button>
+
+<br><br>
+
+<h2 class="display-4">View Monthly Plans</h2>
 
 <div class="card" style="width: 30rem;">
 
 <div class="card-header text-center">
-	Your Price: ₪ {totalPrice} per month 
-	<small class="card-subtitle mb-2 text-muted">(Current dollar rate: ${(totalPrice/rateUSD).toFixed(2)})</small>
+	Total Price per Month: {totalPrice} Shekels
+	<small class="card-subtitle mb-2 text-muted">(current dollar rate: ${(totalPrice/rateUSD).toFixed(2)})</small>
 	<i class="card-subtitle mb-2 text-muted" if={discount}> discount applied!</i>
   </div>
   <div class="card-body">
@@ -57,8 +67,8 @@
   </div><!--end card body-->
 
   <div class="card-header text-center">
-	Your Price: ₪ {totalPrice} per month 
-	<small class="card-subtitle mb-2 text-muted">(Current dollar rate: ${(totalPrice/rateUSD).toFixed(2)})</small>
+	Total Price per Month: {totalPrice} Shekels 
+	<small class="card-subtitle mb-2 text-muted">(current dollar rate: ${(totalPrice/rateUSD).toFixed(2)})</small>
 	<i class="card-subtitle mb-2 text-muted" if={discount}> discount applied!</i>
   </div>
   
@@ -66,17 +76,9 @@
 
 <br>
 <button type="button" class="btn btn-primary btn-lg">
-	<span class="fa-stack fa-2x">
-		<i class="fas fa-sim-card fa-stack-1x"></i>
-		<i class="fas fa-ban fa-stack-2x" style="color:Tomato"></i>
-	</span>
-	I do not have a SIM card. I’d like to order one now >
+	I do not have a SIM card. Get one now >
 	</button><br><br>
 <button type="button" class="btn btn-primary btn-lg">
-		<span class="fa-stack fa-2x">
-		<i class="fas fa-check fa-stack-2x" style="color:green"></i>
-		<i class="fas fa-sim-card fa-stack-1x"></i>
-		</span>
 	I have a SIM card. Activate it now >
 	</button>
 

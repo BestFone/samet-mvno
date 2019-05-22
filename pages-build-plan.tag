@@ -57,7 +57,7 @@
 				<input class="form-check-input" type="radio" name="data_package" id="data_package_none" value="0" data-gb=0 onclick={toggleInternetPackage}>
 				<label class="form-check-label" for="data_package_none">None: You will have no Internet data on your phone. You can still connect to WiFi when available</label>
 			</div>
-
+ <br>
 			<i>If you run out of data, you can add 1GB for 10 shekel.</i>
 			</div>
 		</li>

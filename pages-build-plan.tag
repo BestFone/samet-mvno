@@ -27,28 +27,30 @@
 	<li class="list-group-item"><i class="fas fa-2x fa-toggle-{optionVirtualNumber ? 'on' : 'off'} {optionVirtualNumber ? 'text-success' : 'text-danger'}" onclick={toggleVirtual}></i>
 			USA phone number for calls and text to and from the USA (₪20 per month)</li>
 
-	<li class="list-group-item">
+	<li class="list-group-item"><i class="fas fa-2x fa-toggle-{optionInternet ? 'on' : 'off'} {optionInternet ? 'text-success' : 'text-danger'}" onclick={toggleInternet}></i>
+			High-speed 4G/LTE Internet data
 
-<div class="btn-group btn-group-toggle" data-toggle="buttons">
-  <label class="btn btn-info" onclick={toggleInternet}>
-    <input type="radio" name="internet" ref='internet' autocomplete="off" data-price=0 value=0>No data
-  </label>
-  <label class="btn btn-info" onclick={toggleInternet}>
-    <input type="radio" name="internet" ref='internet' autocomplete="off" data-price=20 value=5>5GB<br><small>₪20 monthly</small>
-  </label>
-  <label class="btn btn-info" onclick={toggleInternet}>
-    <input type="radio" name="internet" ref='internet' autocomplete="off" data-price=40 value=20>20GB<br><small>₪40 monthly</small>
-  </label>
-  <label class="btn btn-info" onclick={toggleInternet}>
-    <input type="radio" name="internet" ref='internet' autocomplete="off" data-price=60 value=50>50GB<br><small>₪60 monthly</small>
-  </label>
-</div>
-			{optionsInternet==0 && optionsInteretTouched ? 'You will have no Internet data on your phone. You can still connect to WiFi when available.' : 
-			'High-speed 4G/LTE Internet data'}</li>
+		<div if={optionInternet}>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="data_package" id="data_package_5gb" value="20" data-gb=5 onclick={toggleInternetPackage}>
+				<label class="form-check-label" for="data_package_5gb">5GB - ₪20 monthly</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="data_package" id="data_package_20gb" value="40" data-gb=20 onclick={toggleInternetPackage}>
+				<label class="form-check-label" for="data_package_20gb">20GB - ₪40 monthly</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="data_package" id="data_package_50gb" value="60" data-gb=50 onclick={toggleInternetPackage}>
+				<label class="form-check-label" for="data_package_50gb">50GB - ₪60 monthly</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="data_package" id="data_package_none" value="0" data-gb=0 onclick={toggleInternetPackage}>
+				<label class="form-check-label" for="data_package_none">None: You will have no Internet data on your phone. You can still connect to WiFi when available</label>
+			</div>
 
-<!--No, I do not need calls to the USA/Canada
-No, I do not need a USA number
--->
+			<i>If you run out of data, you can add 1GB for 10 shekel.</i>
+			</div>
+		</li>
 
   </ul>
 
@@ -105,9 +107,9 @@ this.updatePrice=function(){
 	this.discount=false;
 	if(this.optionCallUSA) this.totalPrice+=20;
 	if(this.optionVirtualNumber) this.totalPrice+=20;
-	if(this.optionsInternet) this.totalPrice+=this.optionsInternet;
+	if(this.optionInternetPackage) this.totalPrice+=this.optionInternetPackage;
 
-	if(this.optionCallUSA && this.optionVirtualNumber && this.optionsInternet) {
+	if(this.optionCallUSA && this.optionVirtualNumber && this.optionInternetPackage) {
 		this.totalPrice-=10;
 		this.discount=true;
 		}
@@ -126,15 +128,18 @@ this.toggleVirtual =function(){
 	this.updatePrice();
 	}
 
-this.optionsInternet=0;
-this.optionsInteretTouched=false;//only show "only wifi" once they've picked "no internet"
+this.optionInternet=false;
 this.toggleInternet=function(){
-	setTimeout(function(){//Weird! this bootstrap group doesn't actually have the value changed on clicking it!
-		var price = $("input[name='internet']:checked").attr('data-price');
-		self.optionsInternet=parseInt(price,10);
-		self.optionsInteretTouched=true;
-		self.updatePrice();
-		},150);
+	this.optionInternet=!this.optionInternet;
+	this.updatePrice();
+	}
+this.optionInternetPackage=0;
+this.toggleInternetPackage=function(){
+	var price = $("input[name='data_package']:checked").attr('value');
+	price =parseInt(price,10);
+	this.optionInternetPackage=price;
+	if(price==0) this.optionInternet=false;
+	self.updatePrice();
 	}
 
 

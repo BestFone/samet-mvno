@@ -29,7 +29,7 @@
   </div>
 </nav>
 <div class="container center-block">
-	<b>How it works in 3 easy steps!</b><br><br>
+	<br><b>How it works in 3 easy steps!</b><br><br>
 	<span class="badge badge-primary">1</span> Get SIM card -->
 	<span class="badge badge-primary">2</span> Activate Plan --> 
 	<span class="badge badge-primary">3</span> Insert SIM into phone and be connected!

@@ -2,14 +2,6 @@
 
 <div class="container center-block">
 
-<br>
-<a href="https://fs28.formsite.com/simforisrael/neqjpdbygw/index.html?1558638441110" target="_blank" class="btn btn-primary btn-lg">
-	I do not have a SIM card. Get one now >
-	</a><br><br>
-<button type="button" class="btn btn-primary btn-lg">
-	I have a SIM card. Activate it now >
-	</button>
-
 <br><br>
 
 <h2 class="display-4">View Monthly Plans</h2>

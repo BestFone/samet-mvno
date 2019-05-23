@@ -14,7 +14,7 @@
         <a class="nav-link" href="#buildplan">View Plans</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Get SIM Card</a>
+        <a class="nav-link" href="https://fs28.formsite.com/simforisrael/neqjpdbygw/index.html?1558638441110" target="_blank">Get SIM Card</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Activate SIM</a>

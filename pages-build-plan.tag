@@ -50,7 +50,7 @@
 				<label class="form-check-label" for="data_package_none">None: You will have no Internet data on your phone. You can still connect to WiFi when available</label>
 			</div>
  <br>
-			<i>If you run out of data, you can add 1GB for 10 shekel.</i>
+			<i>If you run out of data, you can always add more for 10 Shekels per 1GB.</i>
 			</div>
 		</li>
 

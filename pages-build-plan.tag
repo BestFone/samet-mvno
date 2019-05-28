@@ -1,4 +1,4 @@
-<buildplan>
+<prices>
 
 <div class="container center-block">
 	<br><b>How it works in 3 easy steps!</b><br><br>
@@ -26,40 +26,7 @@
 	</ul>
 
 	<br>
-	<center><small class="card-text"><i>Select all 3 add-on options and get 10 Shekels off your monthly price!</i></small></center>
-
-<ul class="list-group">
-	<li class="list-group-item"><i class="fas fa-2x fa-toggle-{optionCallUSA ? 'on' : 'off'} {optionCallUSA ? 'text-success' : 'text-danger'}" onclick={toggleCallNA}></i>
-			Unlimited calls to the USA and Canada (₪20 per month)</li>
-	<li class="list-group-item"><i class="fas fa-2x fa-toggle-{optionVirtualNumber ? 'on' : 'off'} {optionVirtualNumber ? 'text-success' : 'text-danger'}" onclick={toggleVirtual}></i>
-			USA phone number for calls and text to and from the USA (₪20 per month)</li>
-
-	<li class="list-group-item"><i class="fas fa-2x fa-toggle-{optionInternet ? 'on' : 'off'} {optionInternet ? 'text-success' : 'text-danger'}" onclick={toggleInternet}></i>
-			High-speed 4G/LTE Internet data
-
-		<div if={optionInternet}>
-			<div class="form-check">
-				<input class="form-check-input" type="radio" name="data_package" id="data_package_5gb" value="20" data-gb=5 onclick={toggleInternetPackage}>
-				<label class="form-check-label" for="data_package_5gb">5GB - ₪20 monthly</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="radio" name="data_package" id="data_package_20gb" value="40" data-gb=20 onclick={toggleInternetPackage}>
-				<label class="form-check-label" for="data_package_20gb">20GB - ₪40 monthly</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="radio" name="data_package" id="data_package_50gb" value="60" data-gb=50 onclick={toggleInternetPackage}>
-				<label class="form-check-label" for="data_package_50gb">50GB - ₪60 monthly</label>
-			</div>
-			<div class="form-check">
-				<input class="form-check-input" type="radio" name="data_package" id="data_package_none" value="0" data-gb=0 onclick={toggleInternetPackage}>
-				<label class="form-check-label" for="data_package_none">None: You will have no Internet data on your phone. You can still connect to WiFi when available</label>
-			</div>
- <br>
-			<i>If you run out of data, you can always add more for 10 Shekels per 1GB.</i>
-			</div>
-		</li>
-
-  </ul>
+	<buildplan></buildplan>
 
   </div><!--end card body-->
 
@@ -94,16 +61,61 @@
 
 
 <script>
+</script>
+</prices>
+
+
+<buildplan>
+<div>
+	<center><small class="card-text"><i>Select all 3 add-on options and get 10 Shekels off your monthly price!</i></small></center>
+
+<ul class="list-group">
+	<li class="list-group-item"><i class="fas fa-2x fa-toggle-{optionCallUSA ? 'on' : 'off'} {optionCallUSA ? 'text-success' : 'text-danger'}" onclick={toggleCallNA}></i>
+			Unlimited calls to the USA and Canada (₪20 per month)</li>
+	<li class="list-group-item"><i class="fas fa-2x fa-toggle-{optionVirtualNumber ? 'on' : 'off'} {optionVirtualNumber ? 'text-success' : 'text-danger'}" onclick={toggleVirtual}></i>
+			USA phone number for calls and text to and from the USA (₪20 per month)</li>
+
+	<li class="list-group-item"><i class="fas fa-2x fa-toggle-{optionInternet ? 'on' : 'off'} {optionInternet ? 'text-success' : 'text-danger'}" onclick={toggleInternet}></i>
+			High-speed 4G/LTE Internet data
+
+		<div if={optionInternet}>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="data_package" id="data_package_5gb" value="20" data-gb=5 onclick={toggleInternetPackage}>
+				<label class="form-check-label" for="data_package_5gb">5GB - ₪20 monthly</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="data_package" id="data_package_20gb" value="40" data-gb=20 onclick={toggleInternetPackage}>
+				<label class="form-check-label" for="data_package_20gb">20GB - ₪40 monthly</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="data_package" id="data_package_50gb" value="60" data-gb=50 onclick={toggleInternetPackage}>
+				<label class="form-check-label" for="data_package_50gb">50GB - ₪60 monthly</label>
+			</div>
+			<div class="form-check">
+				<input class="form-check-input" type="radio" name="data_package" id="data_package_none" value="0" data-gb=0 onclick={toggleInternetPackage}>
+				<label class="form-check-label" for="data_package_none">None: You will have no Internet data on your phone. You can still connect to WiFi when available</label>
+			</div>
+ <br>
+			<i>If you run out of data, you can always add more for 10 Shekels per 1GB.</i>
+			</div>
+		</li>
+
+  </ul>
+</div>
+
+<script>
 var self = this//can't access "this" within $.ajax/jquery scope
 
-
-this.active=this.opts.active || 'home';
 var base=29;
 this.totalPrice=base;
+parent.totalPrice=this.totalPrice;
+
+
 this.discount=false;
 this.updatePrice=function(){
 	this.totalPrice=base;
 	this.discount=false;
+	parent.discount=false;
 	if(this.optionCallUSA) this.totalPrice+=20;
 	if(this.optionVirtualNumber) this.totalPrice+=20;
 	if(this.optionInternetPackage) this.totalPrice+=this.optionInternetPackage;
@@ -111,8 +123,10 @@ this.updatePrice=function(){
 	if(this.optionCallUSA && this.optionVirtualNumber && this.optionInternetPackage) {
 		this.totalPrice-=10;
 		this.discount=true;
+		parent.discount=true;
 		}
-	this.update();
+	parent.totalPrice=this.totalPrice;
+	riot.update();
 	}
 
 this.optionCallUSA=false;
@@ -130,6 +144,7 @@ this.toggleVirtual =function(){
 this.optionInternet=false;
 this.toggleInternet=function(){
 	this.optionInternet=!this.optionInternet;
+	if(!this.optionInternet) this.optionInternetPackage=0;
 	this.updatePrice();
 	}
 this.optionInternetPackage=0;
@@ -156,8 +171,5 @@ function getValueNumeric(field){
 	if(value) return value.replace(/\s+|-/g,'');
 	else return null;
 	}
-
-
-
 </script>
 </buildplan>

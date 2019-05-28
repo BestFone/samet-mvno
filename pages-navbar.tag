@@ -10,8 +10,8 @@
       <li class="nav-item">
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item {activePage=='buildplan' ? 'active' : ''}">
-        <a class="nav-link" href="#buildplan">View Plans</a>
+      <li class="nav-item {activePage=='prices' ? 'active' : ''}">
+        <a class="nav-link" href="#prices">View Plans</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="https://fs28.formsite.com/simforisrael/neqjpdbygw/index.html?1558638441110" target="_blank">Get SIM Card</a>

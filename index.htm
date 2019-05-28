@@ -74,16 +74,22 @@ div.myRow {
 
 <!--support scripts, used universally-->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous" async></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous" async></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mailcheck/1.1.2/mailcheck.min.js" integrity="sha256-0YrFKC1J34jsOD3yraBxgVJ91zLp4Rb8NztS6QNZV9A=" crossorigin="anonymous" async></script>
 <script src="https://cdn.jsdelivr.net/npm/riot@3.13/riot+compiler.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.payment/3.0.0/jquery.payment.min.js" integrity="sha256-bEuhxmK0QLOu/l5RR+ot9y+A5RDkl5xlSFp7D/+JTjc=" crossorigin="anonymous" async></script>
 <script src="assets/riot-route.min.js"></script><!--v3.0.2-->
 
+
+<link  href="assets/datepicker.min.css" rel="stylesheet">
+<script src="assets/datepicker.min.js" async></script>
 
 <script type="riot/tag" data-src="pages-navbar.tag"></script>
 <script type="riot/tag" data-src="pages-build-plan.tag"></script>
 <script type="riot/tag" data-src="pages-faq.tag"></script>
+<script type="riot/tag" data-src="pages-activate.tag"></script>
 
 <script>
 	var rateUSD=3.6153;
@@ -105,6 +111,7 @@ div.myRow {
 	function router (section, req, data) {
 		if (section =="prices") mount('prices');
 		else if (section =="faq") mount('faq');
+		else if (section =="activate") mount('activate');
 		else mount('prices');
 		}
 	

@@ -16,8 +16,8 @@
       <li class="nav-item">
         <a class="nav-link" href="https://fs28.formsite.com/simforisrael/neqjpdbygw/index.html?1558638441110" target="_blank">Get SIM Card</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Activate SIM</a>
+      <li class="nav-item {activePage=='activate' ? 'active' : ''}">
+        <a class="nav-link" href="#activate">Activate SIM</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">My Account</a>

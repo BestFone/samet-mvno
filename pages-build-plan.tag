@@ -70,7 +70,7 @@
 <a href="https://fs28.formsite.com/simforisrael/neqjpdbygw/index.html?1558638441110" target="_blank" class="btn btn-primary btn-lg">
 	I do not have a SIM card. Get one now >
 	</a><br><br>
-<button type="button" class="btn btn-primary btn-lg">
+<button type="button" class="btn btn-primary btn-lg" onclick={activatePage}>
 	I have a SIM card. Activate it now >
 	</button>
 
@@ -91,14 +91,21 @@
 <script>
 var self = this//can't access "this" within $.ajax/jquery scope
 
-
-this.active=this.opts.active || 'home';
 var base=29;
-this.totalPrice=base;
-this.discount=false;
+this.totalPrice=base;;
+this.discount=false;;
+
+this.activatePage=function(){
+	var data = {
+		longDistance: this.optionCallUSA
+		,virtualNumber: this.optionVirtualNumber
+		,data: this.optionInternetPackage
+		}
+	route('activate?' + $.param(data));
+	}
+
 this.updatePrice=function(){
 	this.totalPrice=base;
-	this.discount=false;
 	if(this.optionCallUSA) this.totalPrice+=20;
 	if(this.optionVirtualNumber) this.totalPrice+=20;
 	if(this.optionInternetPackage) this.totalPrice+=this.optionInternetPackage;
@@ -107,25 +114,31 @@ this.updatePrice=function(){
 		this.totalPrice-=10;
 		this.discount=true;
 		}
+	else this.discount=false;
 	this.update();
 	}
 
 this.optionCallUSA=false;
 this.toggleCallNA =function(){
 	this.optionCallUSA=!this.optionCallUSA;
+	if(!this.optionCallUSA) this.optionVirtualNumber=false;//if turning off calls to NA, then turn off Virtual number
 	this.updatePrice();
 	}
 
 this.optionVirtualNumber=false;
 this.toggleVirtual =function(){
 	this.optionVirtualNumber=!this.optionVirtualNumber;
-	if(this.optionVirtualNumber) this.optionCallUSA=true;
+	if(this.optionVirtualNumber) this.optionCallUSA=true;//if turning on virtual, then the calls to NA must me on.
 	this.updatePrice();
 	}
 
 this.optionInternet=false;
 this.toggleInternet=function(){
 	this.optionInternet=!this.optionInternet;
+	window.localStorage.setItem('optionInternet', this.optionInternet);
+	if(!this.optionsInternet){
+		this.optionInternetPackage=0;
+		}
 	this.updatePrice();
 	}
 this.optionInternetPackage=0;

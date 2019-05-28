@@ -1,11 +1,6 @@
 <prices>
 
 <div class="container center-block">
-	<br><b>How it works in 3 easy steps!</b><br><br>
-	<span class="badge badge-primary">1</span> 
-		<a href="https://fs28.formsite.com/simforisrael/neqjpdbygw/index.html?1558638441110" target="_blank">Get SIM card</a> -->
-	<span class="badge badge-primary">2</span> Activate Plan --> 
-	<span class="badge badge-primary">3</span> Insert SIM into phone and be connected!
 
 <br><br>
 
@@ -26,47 +21,6 @@
 	</ul>
 
 	<br>
-	<buildplan></buildplan>
-
-  </div><!--end card body-->
-
-  <div class="card-header text-center">
-	Total Price per Month: {totalPrice} Shekels 
-	<small class="card-subtitle mb-2 text-muted">(current dollar rate: ${(totalPrice/rateUSD).toFixed(2)})</small>
-	<i class="card-subtitle mb-2 text-muted" if={discount}> discount applied!</i>
-  </div>
-  
-</div><!--end card-->
-
-<br>
-<a href="https://fs28.formsite.com/simforisrael/neqjpdbygw/index.html?1558638441110" target="_blank" class="btn btn-primary btn-lg">
-	I do not have a SIM card. Get one now >
-	</a><br><br>
-<button type="button" class="btn btn-primary btn-lg">
-	I have a SIM card. Activate it now >
-	</button>
-
-<br><br>
-<div class="card" style="width: 30rem;">
-<ul class="list-group list-group-flush">
-	<li class="list-group-item"><i class="fas fa-check"></i> No activation fee!</li>
-	<li class="list-group-item"><i class="fas fa-check"></i> No additional fees!</li>
-	<li class="list-group-item"><i class="fas fa-check"></i> No long term contract!</li>
-	<li class="list-group-item"><i class="fas fa-check"></i> Fully prepaid, renewable monthly!</li>
-	</ul>
-</div>
-
-
-</div><!--big container-->
-
-
-<script>
-</script>
-</prices>
-
-
-<buildplan>
-<div>
 	<center><small class="card-text"><i>Select all 3 add-on options and get 10 Shekels off your monthly price!</i></small></center>
 
 <ul class="list-group">
@@ -101,21 +55,50 @@
 		</li>
 
   </ul>
+
+  </div><!--end card body-->
+
+  <div class="card-header text-center">
+	Total Price per Month: {totalPrice} Shekels 
+	<small class="card-subtitle mb-2 text-muted">(current dollar rate: ${(totalPrice/rateUSD).toFixed(2)})</small>
+	<i class="card-subtitle mb-2 text-muted" if={discount}> discount applied!</i>
+  </div>
+  
+</div><!--end card-->
+
+<br>
+<a href="https://fs28.formsite.com/simforisrael/neqjpdbygw/index.html?1558638441110" target="_blank" class="btn btn-primary btn-lg">
+	I do not have a SIM card. Get one now >
+	</a><br><br>
+<button type="button" class="btn btn-primary btn-lg">
+	I have a SIM card. Activate it now >
+	</button>
+
+<br><br>
+<div class="card" style="width: 30rem;">
+<ul class="list-group list-group-flush">
+	<li class="list-group-item"><i class="fas fa-check"></i> No activation fee!</li>
+	<li class="list-group-item"><i class="fas fa-check"></i> No additional fees!</li>
+	<li class="list-group-item"><i class="fas fa-check"></i> No long term contract!</li>
+	<li class="list-group-item"><i class="fas fa-check"></i> Fully prepaid, renewable monthly!</li>
+	</ul>
 </div>
+
+
+</div><!--big container-->
+
 
 <script>
 var self = this//can't access "this" within $.ajax/jquery scope
 
+
+this.active=this.opts.active || 'home';
 var base=29;
 this.totalPrice=base;
-parent.totalPrice=this.totalPrice;
-
-
 this.discount=false;
 this.updatePrice=function(){
 	this.totalPrice=base;
 	this.discount=false;
-	parent.discount=false;
 	if(this.optionCallUSA) this.totalPrice+=20;
 	if(this.optionVirtualNumber) this.totalPrice+=20;
 	if(this.optionInternetPackage) this.totalPrice+=this.optionInternetPackage;
@@ -123,10 +106,8 @@ this.updatePrice=function(){
 	if(this.optionCallUSA && this.optionVirtualNumber && this.optionInternetPackage) {
 		this.totalPrice-=10;
 		this.discount=true;
-		parent.discount=true;
 		}
-	parent.totalPrice=this.totalPrice;
-	riot.update();
+	this.update();
 	}
 
 this.optionCallUSA=false;
@@ -144,7 +125,6 @@ this.toggleVirtual =function(){
 this.optionInternet=false;
 this.toggleInternet=function(){
 	this.optionInternet=!this.optionInternet;
-	if(!this.optionInternet) this.optionInternetPackage=0;
 	this.updatePrice();
 	}
 this.optionInternetPackage=0;
@@ -171,5 +151,8 @@ function getValueNumeric(field){
 	if(value) return value.replace(/\s+|-/g,'');
 	else return null;
 	}
+
+
+
 </script>
-</buildplan>
+</prices>

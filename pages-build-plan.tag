@@ -27,7 +27,7 @@
 	<li class="list-group-item"><i class="fas fa-2x fa-toggle-{optionCallUSA ? 'on' : 'off'} {optionCallUSA ? 'text-success' : 'text-danger'}" onclick={toggleCallNA}></i>
 			Unlimited calls to the USA and Canada (₪20 per month)</li>
 	<li class="list-group-item"><i class="fas fa-2x fa-toggle-{optionVirtualNumber ? 'on' : 'off'} {optionVirtualNumber ? 'text-success' : 'text-danger'}" onclick={toggleVirtual}></i>
-			USA phone number for calls and text to and from the USA (₪20 per month)</li>
+			USA phone number for calls and text to and from the USA (₪20 per month) <small><i>Must also choose calls to USA/CA</small></i></li>
 
 	<li class="list-group-item"><i class="fas fa-2x fa-toggle-{optionInternet ? 'on' : 'off'} {optionInternet ? 'text-success' : 'text-danger'}" onclick={toggleInternet}></i>
 			High-speed 4G/LTE Internet data
@@ -119,6 +119,7 @@ this.toggleCallNA =function(){
 this.optionVirtualNumber=false;
 this.toggleVirtual =function(){
 	this.optionVirtualNumber=!this.optionVirtualNumber;
+	if(this.optionVirtualNumber) this.optionCallUSA=true;
 	this.updatePrice();
 	}
 
